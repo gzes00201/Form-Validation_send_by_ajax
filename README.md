@@ -1,6 +1,6 @@
 # Form-Validation_send_by_ajax
 
-DEMO:
+DEMO:<br>
 http://htmlpreview.github.io/?https://github.com/gzes00201/Form-Validation_send_by_ajax/blob/master/send_by_ajax.html
 
 使用AJAX推送資料，但卻想使用FORM的驗證方法如required、MAX、MIN等等
