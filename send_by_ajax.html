@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>使用即時表單驗證，並使用ajax傳送資料，不跳頁</title>
+  </head>
+  <body>
+      <div class="app app__layout">
+        <div class="menu">
+
+          <!-- 休假申請 -->
+          <div class="tab re_vacation">
+            <div class="table_box">
+              <span class="table_title">請假</span>
+              <div class="table_row">
+              <form>
+                <span class="table_item">
+                    開始:<input type="datetime-local" name="over_star_tiem"  required>
+                </span><br>
+
+                <span class="table_item">
+                    結束:<input type="datetime-local" name="over_end_tiem" disabled required>
+                </span><br>
+
+                <input type="text" placeholder="輸入請假備註(必須填資料)" class="table_item" name="over_tiem_note" required><br>
+
+                <button class="send__btn table_item send_vacation" type="submit">送出</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- JS Files  -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script>
+        $( "input[name='over_star_tiem']" ).change(function() {
+            //結束時間需大於開始時間
+            $('input[name=\'over_end_tiem\']').attr('min',$(this).val());
+            //可開始設定
+            $('input[name=\'over_end_tiem\']').attr('disabled',false);
+        });
+        $('form').on('submit', function (e) {
+            //阻止表單跳頁
+            e.preventDefault()  
+
+            //可以自己使用AJAX傳送資料
+        });
+      </script>
+  </body>
+</html>
